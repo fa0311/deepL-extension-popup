@@ -1,11 +1,12 @@
 const DEEPL_NODE_NAME = "DEEPL-INLINE-TRIGGER";
 const DEEPL_TOOPTIP_QUERY = "deepl-inline-translate-tooltip";
+const DEEPL_ICON_QUERY = 'div[data-qa="deepl-inline-translate-menu-icon"]';
 
 const deepLOpen = (nodeList: HTMLElement) => {
   if (nodeList.nodeName != DEEPL_NODE_NAME) return;
 
   const icon = nodeList.shadowRoot?.querySelector(
-    'div[data-qa="deepl-inline-translate-menu-icon"]'
+    DEEPL_ICON_QUERY
   ) as HTMLElement;
   icon.click();
   icon.parentElement?.remove();
