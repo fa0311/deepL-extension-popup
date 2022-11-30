@@ -1,0 +1,22 @@
+{
+    "name": "deepL-extension-assistant",
+    "description": "Extend the DeepL extension",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "html/popup.html"
+    },
+    "permissions": [
+        "clipboardWrite"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*"
+            ],
+            "js": [
+                "js/main.js"
+            ]
+        }
+    ]
+}
